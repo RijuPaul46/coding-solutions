@@ -56,7 +56,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:02:43.206Z  
+**Submitted:** 2026-09-02T14:58:45.036Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -65,9 +65,8 @@ using namespace std;
 void solve(){
     int n;
     cin>>n;
-    int a=n/2;
-    int rem=n%2;
-    cout<<n+a-rem+1<<endl;
+    int a=n/3;
+    cout<<3*(a+1)+1<<endl;
     // if(n%3==0){
     //     cout<<n+1<<endl;
     // }
