@@ -6,7 +6,7 @@ void solve(){
     cin>>n;
     int a=n/2;
     int rem=n%2;
-    cout<<a-rem+1<<endl;
+    cout<<n+a-rem+1<<endl;
     // if(n%3==0){
     //     cout<<n+1<<endl;
     // }
