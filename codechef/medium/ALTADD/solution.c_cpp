@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 void solve(){
     int n;
     cin>>n;
@@ -19,7 +20,7 @@ void solve(){
     cnt+=mx;
     cout<<cnt<<endl;
 }
-int main() {
+signed main() {
 	// your code goes here
 	int t;
 	cin>>t;
