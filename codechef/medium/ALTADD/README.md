@@ -66,11 +66,12 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T17:45:40.205Z  
+**Submitted:** 2026-09-02T17:45:59.220Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 void solve(){
     int n;
     cin>>n;
@@ -90,7 +91,7 @@ void solve(){
     cnt+=mx;
     cout<<cnt<<endl;
 }
-int main() {
+signed main() {
 	// your code goes here
 	int t;
 	cin>>t;
