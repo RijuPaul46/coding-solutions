@@ -4,9 +4,8 @@ using namespace std;
 void solve(){
     int n;
     cin>>n;
-    int a=n/2;
-    int rem=n%2;
-    cout<<n+a-rem+1<<endl;
+    int a=n/3;
+    cout<<3*(a+1)+1<<endl;
     // if(n%3==0){
     //     cout<<n+1<<endl;
     // }
