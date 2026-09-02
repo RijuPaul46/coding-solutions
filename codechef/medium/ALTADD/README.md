@@ -66,7 +66,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:15:35.198Z  
+**Submitted:** 2026-09-02T15:17:42.399Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -79,8 +79,16 @@ void solve(){
     int cnt=0;
     int mx=abs(arr[0]);
     for(int i=1;i<n;i++){
-        if(arr[i]*arr[i-1]<0)
+        if(arr[i]*arr[i-1]<0){
+            mx=max(mx,abs(arr[i]));
+        }
+        else{
+            cnt+=mx;
+            mx=arr[i];
+        }
     }
+    cnt+=mx;
+    cout<<cnt<<endl;
 }
 int main() {
 	// your code goes here
