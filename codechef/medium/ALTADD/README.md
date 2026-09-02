@@ -66,14 +66,27 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:05:55.200Z  
+**Submitted:** 2026-09-02T15:15:35.198Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+void solve(){
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++)cin>>arr[i];
+    int cnt=0;
+    int mx=abs(arr[0]);
+    for(int i=1;i<n;i++){
+        if(arr[i]*arr[i-1]<0)
+    }
+}
 int main() {
 	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)solve();
 
 }
 
