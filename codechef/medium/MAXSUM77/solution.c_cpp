@@ -1,5 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+int find(vector<int>&arr,int i,int j,int k,vector<vector<int>> &dp){
+    int n=arr.size();
+    if(i+(n-1-j)==k)return 0;
+    auto &ref=dp[i][j];
+    if(ref!=-1)return ref;
+    int left=arr[i]+find(arr,i+1,j,k,dp);
+    int right=arr[j]+find(arr,i,j-1,k,dp);
+    return ref=min(left,right);
+}
 void solve(){
     int n,k;
     cin>>n>>k;
@@ -7,17 +16,8 @@ void solve(){
     int total=0;
     for(int i=0;i<n;i++){cin>>arr[i];total+=arr[i];}
     int i=0,j=n-1;
-    int sm=0;
-    while(k--){
-        if(arr[i]<arr[j]){
-            sm+=arr[i];
-            i++;
-        }
-        else{
-            sm+=arr[j];
-            j--;
-        }
-    }
+    vector<vector<int>> dp(n,vector<int>(n,-1));
+    int sm=find(arr,0,n-1,k,dp);
     cout<<total-sm<<endl;
 }
 int main() {
