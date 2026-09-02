@@ -56,7 +56,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:02:20.048Z  
+**Submitted:** 2026-09-02T15:02:43.206Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -67,7 +67,7 @@ void solve(){
     cin>>n;
     int a=n/2;
     int rem=n%2;
-    cout<<a-rem+1<<endl;
+    cout<<n+a-rem+1<<endl;
     // if(n%3==0){
     //     cout<<n+1<<endl;
     // }
