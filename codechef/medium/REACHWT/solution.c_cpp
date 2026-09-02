@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve(){
+    int n;
+    cin>>n;
+    int cost=0;
+    cost+=(n/2)*30;
+    cost+=(n%2)*20;
+    cout<<cost<<endl;
+}
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)solve();
+
+}
