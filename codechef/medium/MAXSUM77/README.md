@@ -51,14 +51,36 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T14:34:00.463Z  
+**Submitted:** 2026-09-02T14:36:59.023Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+void solve(){
+    int n,k;
+    cin>>n>>k;
+    vector<int>arr(n);
+    int total=0;
+    for(int i=0;i<n;i++){cin>>arr[i];total+=arr[i];}
+    int i=0,j=n-1;
+    int sm=0;
+    while(k--){
+        if(arr[i]<arr[j]){
+            sm+=arr[i];
+            i++;
+        }
+        else{
+            sm+=arr[j];
+            j--;
+        }
+    }
+    cout<<total-sm<<endl;
+}
 int main() {
 	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)solve();
 
 }
 
