@@ -81,15 +81,21 @@ In the final query, dishes $1$ and $3$ already belong to the same chef, so `Inva
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T14:01:36.737Z  
+**Submitted:** 2026-09-07T14:05:05.744Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+void solve(){
+    int n;
+    cin>>n;
+    
+}
 int main() {
 	// your code goes here
-
+    int t;
+    cin>>t;
+    while(t--)solve();
 }
 
 ```
