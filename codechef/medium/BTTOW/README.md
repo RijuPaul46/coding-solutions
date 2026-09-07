@@ -84,7 +84,7 @@ Therefore, the minimum possible difference is `11`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T15:20:01.543Z  
+**Submitted:** 2026-09-07T15:34:33.541Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -102,6 +102,9 @@ signed main() {
 	    mx=max(mx,arr[i]);
 	    mn=min(mn,arr[i]);
 	}
+	if(k>=mx){
+	    cout<<"0"<<endl;
+	}
 	int mid=mn+(mx-mn)/2;
 	 mx=INT_MIN;
 	 mn=INT_MAX;
@@ -118,11 +121,13 @@ signed main() {
 	   // mx=max(mx,x+k);
 	   // mn=min(max(0,x-k),mn);
 	}
+	cout<<mx<<" "<<mn;
 	int ans=INT_MAX;
 	for(auto &x:arr){
+	    int p1=x+k;
+	    int p2=max(0ll,x-k);
 	    if(x<mid){
-	        int p1=x+k;
-	        int p2=max(0ll,x-k);
+	        if((p1>=mn && p1<=mx) || (p2>=mn && p2<=mx))
 	        int d0=max(abs(mx-p1),abs(mx-p2));
 	        int d1=max(abs(mn-p1),abs(mn-p2));
 	        ans=min(ans,min(d0,d1));
