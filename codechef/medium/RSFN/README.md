@@ -69,14 +69,19 @@ $1+1+2+3+5=12$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T13:37:58.112Z  
+**Submitted:** 2026-09-07T13:39:58.109Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+signed main() {
 	// your code goes here
+	int n,q;
+	cin>>n>>q;
+	vector<int>arr(n);
+	for(int i=0;i<n;i++)cin>>arr[i];
+	
 
 }
 
