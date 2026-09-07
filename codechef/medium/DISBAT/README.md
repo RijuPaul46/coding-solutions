@@ -81,7 +81,7 @@ In the final query, dishes $1$ and $3$ already belong to the same chef, so `Inva
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T14:05:05.744Z  
+**Submitted:** 2026-09-07T14:08:25.736Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -89,6 +89,15 @@ using namespace std;
 void solve(){
     int n;
     cin>>n;
+    vector<int>scr(n+1);
+    vector<int>owner(n+1);
+    unordered_map<
+        int,
+        set<pair<int,int>,greater<pair<int,int>>>> mp;
+    for(int i=1;i<=n;i++){
+        cin>>scr[i];
+        owner[i]=i;
+    }
     
 }
 int main() {
