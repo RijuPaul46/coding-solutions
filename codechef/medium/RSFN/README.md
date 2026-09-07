@@ -69,18 +69,32 @@ $1+1+2+3+5=12$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T13:39:58.109Z  
+**Submitted:** 2026-09-07T13:45:02.115Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+const int m=1e9+7;
 signed main() {
 	// your code goes here
 	int n,q;
 	cin>>n>>q;
-	vector<int>arr(n);
-	for(int i=0;i<n;i++)cin>>arr[i];
+	vector<int>arr(n+1);
+	for(int i=1;i<=n;i++)cin>>arr[i];
+	vector<int>f(1e5+1);
+	f[1]=1;
+	f[2]=1;
+	for(int i=3;i<=1e5;i++){
+	    f[i]=(f[i-1]+f[i-2])%m;
+	}
+	vector<int>pre(n+1,0);
+	for(int i=1;i<=n;i++){
+	    int x=arr[i];
+	    int a=f[x];
+	    pre[i]=pre[i-1]+a;
+	}
+	for()
 	
 
 }
