@@ -81,7 +81,7 @@ In the final query, dishes $1$ and $3$ already belong to the same chef, so `Inva
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T14:05:12.735Z  
+**Submitted:** 2026-09-07T14:16:11.279Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -89,6 +89,55 @@ using namespace std;
 void solve(){
     int n;
     cin>>n;
+    vector<int>scr(n+1);
+    vector<int>owner(n+1);
+    unordered_map<
+        int,
+        set<pair<int,int>,greater<pair<int,int>>>> mp;
+    for(int i=1;i<=n;i++){
+        cin>>scr[i];
+        owner[i]=i;
+        mp[i].insert({scr[i],i});
+    }
+    int q;
+    cin>>q;
+    for(int i=0;i<q;i++){
+        int type;
+        cin>>type;
+        if(type==1){
+            int x;
+            cin>>x;
+            cout<<owner[x]<<endl;
+        }
+        else{
+            int x,y;
+            cin>>x>>y;
+            if(owner[x]==owner[y]){
+                cout<<"Invalid query!"<<endl;
+                continue;
+            }
+            int ox=owner[x];
+            int oy=owner[y];
+            int ox_sc=0,oy_sc=0;
+            if(mp[ox].size()>0)
+             ox_sc=(*mp[ox].begin()).first;
+             if(mp[oy].size()>0)
+            oy_sc=(*mp[oy].begin()).first;
+            if(ox_sc>oy_sc){
+                for(auto &[u,v]:mp[oy]){
+                    owner[v]=ox;
+                    mp[ox].insert({u,v});
+                }
+            }
+            else if(ox_sc<oy_sc){
+                for(auto &[u,v]:mp[ox]){
+                    owner[v]=oy;
+                    mp[oy].insert({u,v});
+                }
+            }
+
+        }
+    }
     
 }
 int main() {
