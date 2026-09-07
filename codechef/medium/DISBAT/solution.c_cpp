@@ -1,17 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
+vector<int>par,rank;
+int findpar(int u){
+    if(par[u]==u)return u;
+    return par[u]=findpar(par[u]);
+}
+int unite(int u,int v){
+    int pu=findpar(u);
+    int pv=findpar(v);
+    if(pu==pv)return 1;//both have same par
+    if(rank[pu]>rank[pv]){
+        par[pv]=pu;
+        
+    }
+    else if(rank[pu]<rank[pv]){
+        par[pu]=pv;
+    }
+    // else{
+    //     // have same score
+    //     return 1;
+    // }
+    return 0;
+}
 void solve(){
     int n;
     cin>>n;
-    vector<int>scr(n+1);
-    vector<int>owner(n+1);
-    unordered_map<
-        int,
-        set<pair<int,int>,greater<pair<int,int>>>> mp;
+    par.resize(n+1);
+    rank.resize(n+1);
+    // vector<int>scr(n+1);
+    // vector<int>owner(n+1);
+    // unordered_map<
+    //     int,
+    //     set<pair<int,int>,greater<pair<int,int>>>> mp;
     for(int i=1;i<=n;i++){
-        cin>>scr[i];
-        owner[i]=i;
-        mp[i].insert({scr[i],i});
+        int x;
+        cin>>x;
+        rank[i]=x;
+        par[i]=i;
+        // mp[i].insert({scr[i],i});
     }
     int q;
     cin>>q;
@@ -21,34 +47,17 @@ void solve(){
         if(type==1){
             int x;
             cin>>x;
-            cout<<owner[x]<<endl;
+            int p=findpar(x);
+            cout<<p<<endl;
         }
         else{
             int x,y;
             cin>>x>>y;
-            if(owner[x]==owner[y]){
+            int res=unite(x,y);
+            if(res==1){
                 cout<<"Invalid query!"<<endl;
-                continue;
             }
-            int ox=owner[x];
-            int oy=owner[y];
-            int ox_sc=0,oy_sc=0;
-            if(mp[ox].size()>0)
-             ox_sc=(*mp[ox].begin()).first;
-             if(mp[oy].size()>0)
-            oy_sc=(*mp[oy].begin()).first;
-            if(ox_sc>oy_sc){
-                for(auto &[u,v]:mp[oy]){
-                    owner[v]=ox;
-                    mp[ox].insert({u,v});
-                }
-            }
-            else if(ox_sc<oy_sc){
-                for(auto &[u,v]:mp[ox]){
-                    owner[v]=oy;
-                    mp[oy].insert({u,v});
-                }
-            }
+            
 
         }
     }
