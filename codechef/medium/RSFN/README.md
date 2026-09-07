@@ -69,7 +69,7 @@ $1+1+2+3+5=12$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T13:45:02.115Z  
+**Submitted:** 2026-09-07T13:46:11.261Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -92,9 +92,14 @@ signed main() {
 	for(int i=1;i<=n;i++){
 	    int x=arr[i];
 	    int a=f[x];
-	    pre[i]=pre[i-1]+a;
+	    pre[i]=(pre[i-1]+a)%m;
 	}
-	for()
+	for(int i=0;i<q;i++){
+	    int l,r;
+	    cin>>l>>r;
+	    int sm=(pre[r]-pre[l-1]+m)%m;
+	    cout<<sm<<endl;
+	}
 	
 
 }
