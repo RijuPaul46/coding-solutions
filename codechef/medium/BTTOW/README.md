@@ -84,14 +84,19 @@ Therefore, the minimum possible difference is `11`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T13:46:31.480Z  
+**Submitted:** 2026-09-07T13:47:52.476Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+signed main() {
 	// your code goes here
+	int n,k;
+	cin>>n>>k;
+	vector<int>arr(n);
+	for(int i=0;i<n;i++)cin>>arr[i];
+	
 
 }
 
