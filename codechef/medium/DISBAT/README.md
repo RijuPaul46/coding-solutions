@@ -81,7 +81,7 @@ In the final query, dishes $1$ and $3$ already belong to the same chef, so `Inva
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T14:16:15.033Z  
+**Submitted:** 2026-09-07T15:40:51.338Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
