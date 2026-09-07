@@ -84,7 +84,7 @@ Therefore, the minimum possible difference is `11`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T15:34:33.541Z  
+**Submitted:** 2026-09-07T15:40:13.160Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -121,16 +121,38 @@ signed main() {
 	   // mx=max(mx,x+k);
 	   // mn=min(max(0,x-k),mn);
 	}
-	cout<<mx<<" "<<mn;
-	int ans=INT_MAX;
+// 	cout<<mx<<" "<<mn;
+	int ans=mx-mn;
 	for(auto &x:arr){
 	    int p1=x+k;
 	    int p2=max(0ll,x-k);
 	    if(x<mid){
-	        if((p1>=mn && p1<=mx) || (p2>=mn && p2<=mx))
-	        int d0=max(abs(mx-p1),abs(mx-p2));
-	        int d1=max(abs(mn-p1),abs(mn-p2));
-	        ans=min(ans,min(d0,d1));
+	        if((p1>=mn && p1<=mx) || (p2>=mn && p2<=mx)){
+	            continue;
+	        }
+	        else{
+	            int d0=INT_MAX,d1=INT_MAX,d2=INT_MAX,d3=INT_MAX;
+	            if(p1<mn)d0=mx-p1;
+	            if(p1>mx)d1=p1-mn;
+	            if(p2>mx)d2=p2-mn;
+	            if(p2<mn)d3=mx-p2;
+	            int mni=min(min(d0,d1),min(d2,d3));
+	            ans=mni;
+	            if(d0==mni){
+	                mn=p1;
+	            }
+	            if(d1==mni){
+	                mx=p1;
+	            }
+	            if(d2==mni){
+	                mx=p2;
+	            }
+	            if(d3==mni){
+	                mn=p2;
+	            }
+	            
+	        }
+	        
 	    }
 	}
 	cout<<ans;
