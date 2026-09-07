@@ -81,12 +81,12 @@ In the final query, dishes $1$ and $3$ already belong to the same chef, so `Inva
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T16:00:11.378Z  
+**Submitted:** 2026-09-07T16:01:47.093Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-vector<int>par,rank;
+vector<int>par,rnk;
 int findpar(int u){
     if(par[u]==u)return u;
     return par[u]=findpar(par[u]);
@@ -95,11 +95,11 @@ int unite(int u,int v){
     int pu=findpar(u);
     int pv=findpar(v);
     if(pu==pv)return 1;//both have same par
-    if(rank[pu]>rank[pv]){
+    if(rnk[pu]>rnk[pv]){
         par[pv]=pu;
         
     }
-    else if(rank[pu]<rank[pv]){
+    else if(rnk[pu]<rnk[pv]){
         par[pu]=pv;
     }
     // else{
@@ -112,7 +112,7 @@ void solve(){
     int n;
     cin>>n;
     par.resize(n+1);
-    rank.resize(n+1);
+    rnk.resize(n+1);
     // vector<int>scr(n+1);
     // vector<int>owner(n+1);
     // unordered_map<
@@ -121,7 +121,7 @@ void solve(){
     for(int i=1;i<=n;i++){
         int x;
         cin>>x;
-        rank[i]=x;
+        rnk[i]=x;
         par[i]=i;
         // mp[i].insert({scr[i],i});
     }
