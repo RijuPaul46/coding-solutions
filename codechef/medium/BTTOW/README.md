@@ -84,21 +84,53 @@ Therefore, the minimum possible difference is `11`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T16:04:09.363Z  
+**Submitted:** 2026-09-07T20:59:24.395Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+#define ll long long
+vector<pair<int,int>> dp;
+vector<int>visited;
+pair<int,int> solve(int i,vector<int>&arr,int k){
+    int n=arr.size();
+    if(i==n)return {INT_MIN,INT_MAX};
+    if(visited[i])return dp[i];
+    visited[i]=true;
+    int x=arr[i];
+    int p1=max(0ll,x-k);
+    int p2=x+k;
+    auto [mx,mn]=solve(i+1,arr,k);
+    if(p1>=mn && p1<=mx)return dp[i]={mx,mn};
+    if(p2>=mn && p2<=mx)return dp[i]={mx,mn};
+    int d0=INT_MAX,d1=INT_MAX,d2=INT_MAX,d3=INT_MAX;
+    if(p1<mn)d0=mn-p1;
+    if(p1>mx)d1=p1-mx;
+    if(p2<mn)d2=mn-p2;
+    if(p2>mx)d3=p2-mx;
+    int mni=min(min(d0,d1),min(d2,d3));
+    if(d0==mni){
+        return dp[i]={mx,p1};
+    }
+    if(d1==mni){
+        return dp[i]={p1,mn};
+    }
+    if(d2==mni){
+        return dp[i]={mx,p2};
+    }
+    return dp[i]={p2,mn};
+}
 signed main() {
 	// your code goes here
 	int n,k;
 	cin>>n>>k;
 	vector<int>arr(n);
 	for(int i=0;i<n;i++)cin>>arr[i];
-	int mx=INT_MIN;
-	int mn=INT_MAX;
-	for(auto &x:)
+	dp.resize(n+1);
+	visited.resize(n+1,0);
+	auto [mx,mn]=solve(0,arr,k);
+	cout<<mx-mn<<endl;
 
 }
 
