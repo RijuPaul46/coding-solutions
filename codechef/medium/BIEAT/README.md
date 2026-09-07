@@ -73,14 +73,27 @@ Each number has at most $4$ significant bits, so removing $4$ least significant 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T13:35:18.995Z  
+**Submitted:** 2026-09-07T13:37:31.778Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+signed main() {
 	// your code goes here
+	int n;
+	cin>>n;
+	vector<int>arr(n);
+	for(int i=0;i<n;i++)cin>>arr[i];
+	int m;
+	cin>>m;
+	
+	for(auto &x:arr){
+	    int a=(x>>m);
+	    cout<<a<<" ";
+	}
+	cout<<endl;
+	return 0;
 
 }
 
