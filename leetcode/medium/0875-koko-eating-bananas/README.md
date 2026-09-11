@@ -49,9 +49,9 @@ Output: 23
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-09-11T19:45:01.629Z  
+**Runtime:** 8 ms (beats 54.17%)  
+**Memory:** 23 MB (beats 24.30%)  
+**Submitted:** 2026-09-11T19:45:08.095Z  
 
 ```cpp
 #define ll long long
