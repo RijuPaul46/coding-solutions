@@ -63,9 +63,9 @@ It is obvious that we can make two bouquets in different ways.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 14.3 MB  
-**Submitted:** 2026-09-11T20:42:41.615Z  
+**Runtime:** 61 ms (beats 5.18%)  
+**Memory:** 72.5 MB (beats 7.36%)  
+**Submitted:** 2026-09-11T20:42:46.960Z  
 
 ```cpp
 #define ll long long
