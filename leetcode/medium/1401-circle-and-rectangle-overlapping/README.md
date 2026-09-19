@@ -47,9 +47,9 @@ Output: true
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.8 MB  
-**Submitted:** 2026-09-19T08:19:57.517Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 7.6 MB (beats 95.38%)  
+**Submitted:** 2026-09-19T08:20:06.615Z  
 
 ```cpp
 #define db double 
