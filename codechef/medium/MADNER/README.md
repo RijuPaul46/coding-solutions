@@ -73,13 +73,24 @@ xyyyx
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T13:34:49.313Z  
+**Submitted:** 2026-09-21T13:36:57.594Z  
 
 ```c_cpp
 class Solution {
 public:
-    int findMaximumPairs(const string &students) {
+    int findMaximumPairs(const string &a) {
         // write your code here 
+        int n=a.size();
+        vector<bool>taken(n,false);
+        int cnt=0;
+        for(int i=1;i<n;i++){
+            if(a[i]!=a[i-1] && !taken[i-1]){
+                cnt++;
+                taken[i]=true;
+                taken[i-1]=true;
+            }
+        }
+        return cnt;
         
     }
 };
