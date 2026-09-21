@@ -68,7 +68,7 @@ The seat pairs already contain couples $(3,2)$ and $(0,1)$. No swaps are needed.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T13:45:07.941Z  
+**Submitted:** 2026-09-21T13:46:08.934Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
