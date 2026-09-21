@@ -91,7 +91,7 @@ $5+5=10$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T14:13:26.820Z  
+**Submitted:** 2026-09-21T14:15:45.172Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -106,14 +106,13 @@ int solve(vector<int>&a,vector<bool>&bursted){
             while(left>=0 && bursted[left])left--;
             while(right<n && bursted[right])right++;
             int x=1,y=1;
-            if(left>=0){x=a[left];bursted[left]=true;}
-            if(right<n){y=a[right];bursted[right]=true;}
+            if(left>=0){x=a[left];}
+            if(right<n){y=a[right];}
             bursted[i]=true;
             int val=a[i]*x*y+solve(a,bursted);
             sm=max(sm,val);
             bursted[i]=false;
-            if(left>=0)bursted[left]=false;
-            if(right<n)bursted[right]=false;
+            
             
             
             
