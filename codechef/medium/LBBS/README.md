@@ -65,7 +65,7 @@ It contains two `0`s and two `1`s, so the entire string becomes balanced. Theref
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T13:37:25.894Z  
+**Submitted:** 2026-09-21T13:37:38.890Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
