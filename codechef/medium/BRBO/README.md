@@ -91,13 +91,13 @@ $5+5=10$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T14:07:31.822Z  
+**Submitted:** 2026-09-21T14:13:17.821Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 int solve(vector<int>&a,vector<bool>&bursted){
-    int n=arr.size();
+    int n=a.size();
     int sm=0;
     for(int i=0;i<n;i++){
         if(!bursted[i]){
@@ -106,15 +106,31 @@ int solve(vector<int>&a,vector<bool>&bursted){
             while(left>=0 && bursted[left])left--;
             while(right<n && bursted[right])right++;
             int x=1,y=1;
-            if(left>=0){x=a[left];visited[left]=true;}
-            if(right<n){y=a[right];visited[right]=true;}
-            int val=a[i]*x*y;
+            if(left>=0){x=a[left];bursted[left]=true;}
+            if(right<n){y=a[right];bursted[right]=true;}
+            bursted[i]=true;
+            int val=a[i]*x*y+solve(a,bursted);
+            sm=max(sm,val);
+            bursted[i]=false;
+            if(left>=0)bursted[left]=false;
+            if(right<n)bursted[right]=false;
+            
+            
             
         }
     }
+    return sm;
 }
 int main() {
 	// your code goes here
+	int n;
+	cin>>n;
+	vector<int>arr(n);
+	for(int i=0;i<n;i++)cin>>arr[i];
+	vector<bool> bursted(n,false);
+	int x=solve(arr,bursted);
+	cout<<x<<endl;
+	return 0;
 
 }
 
