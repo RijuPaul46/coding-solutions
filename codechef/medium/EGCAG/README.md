@@ -77,7 +77,7 @@ Therefore, the maximum number of winning rounds is $1$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T13:58:17.546Z  
+**Submitted:** 2026-09-21T13:58:24.506Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
