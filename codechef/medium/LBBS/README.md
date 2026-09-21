@@ -65,7 +65,7 @@ It contains two `0`s and two `1`s, so the entire string becomes balanced. Theref
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-21T13:37:38.890Z  
+**Submitted:** 2026-09-21T13:43:36.498Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -73,6 +73,26 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	string s;
+	int k;
+	cin>>s>>k;
+	int n=s.size();
+	int mx=0;
+	for(int i=0;i<n;i++){
+	    int one=0,zero=0;
+	    for(int j=i;j<n;j++){
+	       if(s[j]=='1')one++;
+	       else zero++;
+	       int diff=abs(one-zero);
+	       if(diff%2==0){
+	           if((diff/2) <=k){
+	               mx=max(mx,j-i+1);
+	           }
+	       }
+	    }
+	}
+	cout<<mx<<endl;
+	return 0;
 
 }
 
