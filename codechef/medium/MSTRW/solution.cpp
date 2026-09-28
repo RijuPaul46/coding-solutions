@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main() {
+	// your code goes here
+	//each time i shoudl decrese the highest freq
+	//keep a priority queue... decrese the highest elm
+	string s;
+	int k;
+	cin>>s>>k;
+	int n=s.size();
+	if(n==0 || k>=n){
+	    cout<<"0"<<endl;
+	    return 0;
+	}
+	vector<int>freq(26);
+	for(auto &c:s){
+	    freq[c-'a']++;
+	}
+	priority_queue<int>q;
+	for(auto &f:freq)q.push(f);
+	while(k--){
+	    if(q.size()>0){
+	        int tp=q.top();
+	        q.pop();
+	        if((tp-1)>0)
+	        q.push(tp-1);
+	    }
+	    else{
+	        cout<<"0"<<endl;
+	        return 0;
+	    }
+	}
+	ll cnt=0;
+	while(q.size()){
+	    int tp=q.top();
+	    cnt+=(tp*tp);
+	    q.pop();
+	}
+	cout<<cnt<<endl;
+	return 0;
+
+}
