@@ -3,5 +3,11 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int c,m,w,p,r;
+	cin>>c>>m>>w>>p>>r;
+	int score=c*m-w*p;
+	if(score>=r)cout<<"YES"<<endl;
+	else cout<<"NO"<<endl;
+	
 
 }
