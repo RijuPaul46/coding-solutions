@@ -51,84 +51,61 @@ Only horizontal and vertical moves are allowed; diagonal moves are not allowed.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:10:13.493Z  
+**Submitted:** 2026-09-28T14:07:23.674Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
-
 using namespace std;
-vector < vector < int >> dir = {
-    {
-        1,
-        0
-    },
-    {
-        -1,
-        0
-    },
-    {
-        0,
-        1
-    },
-    {
-        0,
-        -1
-    }
-};
+vector<vector<int>> dir={{1,0},{-1,0},{0,1},{0,-1}};
 int main() {
-    // your code goes here
-    int n, m;
-    cin >> n >> m;
-    vector < vector < int >> arr(n, vector < int > (m));
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cin >> arr[i][j];
-        }
-    }
-    vector < vector < int >> dist(n, vector < int > (m, INT_MAX));
-    queue < pair < int, int >> q;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            if (arr[i][j] == 0) {
-                dist[i][j] = 0;
-                q.push({
-                    i,
-                    j
-                });
-            }
-        }
-    }
-    int d = 0;
-    while (!q.empty()) {
-        int sz = q.size();
-        for (int i = 0; i < sz; i++) {
-            auto[x, y] = q.front();
-            q.pop();
-            for (int j = 0; j < 4; j++) {
-                int nx = x + dir[j][0];
-                int ny = y + dir[j][1];
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m) {
-                    int nd = d + 1;
-                    if (nd < dist[nx][ny]) {
-                        dist[nx][ny] = nd;
-                        q.push({
-                            nx,
-                            ny
-                        });
-                    }
-                }
-            }
-        }
-        d++;
-    }
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cout << dist[i][j] << " ";
-        }
-        cout << endl;
-    }
+	// your code goes here
+	int n,m;
+	cin>>n>>m;
+	vector<vector<int>> arr(n,vector<int>(m));
+	for(int i=0;i<n;i++){
+	    for(int j=0;j<m;j++){
+	        cin>>arr[i][j];
+	    }
+	}
+	vector<vector<int>> dist(n,vector<int>(m,INT_MAX));
+	queue<pair<int,int>>q;
+	for(int i=0;i<n;i++){
+	    for(int j=0;j<m;j++){
+	        if(arr[i][j]==0){
+	            dist[i][j]=0;
+	            q.push({i,j});
+	        }
+	    }
+	}
+	int d=0;
+	while(!q.empty()){
+	    int sz=q.size();
+	    for(int i=0;i<sz;i++){
+	        auto [x,y]=q.front();
+	        q.pop();
+	        for(int j=0;j<4;j++){
+	            int nx=x+dir[j][0];
+	            int ny=y+dir[j][1];
+	            if(nx>=0 && nx<n && ny>=0 && ny<m){
+	                int nd=d+1;
+	                if(nd<dist[nx][ny]){
+	                    dist[nx][ny]=nd;
+	                    q.push({nx,ny});
+	                }
+	            }
+	        }
+	    }
+	    d++;
+	}
+	for(int i=0;i<n;i++){
+	    for(int j=0;j<n;j++){
+	        cout<<dist[i][j]<<" ";
+	    }
+	    cout<<endl;
+	}
 
 }
+
 ```
 
 ---
