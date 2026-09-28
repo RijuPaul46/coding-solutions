@@ -83,7 +83,7 @@ Therefore, the minimum possible price is $321$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T13:42:08.110Z  
+**Submitted:** 2026-09-28T13:42:43.115Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
