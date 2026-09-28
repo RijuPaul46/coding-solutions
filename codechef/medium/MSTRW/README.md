@@ -66,12 +66,12 @@ The weight is $3^2+3^2+3^2=27$. This equal distribution minimizes the weight of 
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:21:42.635Z  
+**Submitted:** 2026-09-28T14:23:00.507Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -97,6 +97,7 @@ int main() {
 	    if(q.size()>0){
 	        int tp=q.top();
 	        q.pop();
+	        if((tp-1)>0)
 	        q.push(tp-1);
 	    }
 	    else{
