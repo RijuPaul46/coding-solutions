@@ -20,13 +20,14 @@ int main() {
 	priority_queue<int>q;
 	for(auto &f:freq)q.push(f);
 	while(k--){
-	    if(q.size()){
+	    if(q.size()>0){
 	        int tp=q.top();
 	        q.pop();
 	        q.push(tp-1);
 	    }
 	    else{
 	        cout<<"0"<<endl;
+	        return 0;
 	    }
 	}
 	ll cnt=0;
