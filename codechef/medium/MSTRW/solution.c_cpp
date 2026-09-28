@@ -34,7 +34,7 @@ int main() {
 	ll cnt=0;
 	while(q.size()){
 	    int tp=q.top();
-	    cnt+=(tp*tp);
+	    cnt+=(1ll*tp*tp);
 	    q.pop();
 	}
 	cout<<cnt<<endl;
