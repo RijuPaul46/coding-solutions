@@ -23,6 +23,7 @@ int main() {
 	    if(q.size()>0){
 	        int tp=q.top();
 	        q.pop();
+	        if((tp-1)>0)
 	        q.push(tp-1);
 	    }
 	    else{
