@@ -69,14 +69,48 @@ The weight is $3^2+3^2+3^2=27$. This equal distribution minimizes the weight of 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:11:35.197Z  
+**Submitted:** 2026-09-28T14:17:27.194Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+#define ll long long
 int main() {
 	// your code goes here
+	//each time i shoudl decrese the highest freq
+	//keep a priority queue... decrese the highest elm
+	string s;
+	int k;
+	cin>>s>>k;
+	int n=s.size();
+	if(n==0 || k>n){
+	    cout<<"0"<<endl;
+	    return 0;
+	}
+	vector<int>freq(26);
+	for(auto &c:s){
+	    freq[c-'a']++;
+	}
+	priority_queue<int>q;
+	for(auto &f:freq)q.push(f);
+	while(k--){
+	    if(q.size()){
+	        int tp=q.top();
+	        q.pop();
+	        q.push(tp-1);
+	    }
+	    else{
+	        cout<<"0"<<endl;
+	    }
+	}
+	ll cnt=0;
+	while(q.size()){
+	    int tp=q.top();
+	    cnt+=(tp*tp);
+	    q.pop();
+	}
+	cout<<cnt<<endl;
+	return 0;
 
 }
 
