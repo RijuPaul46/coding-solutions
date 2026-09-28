@@ -69,7 +69,7 @@ The weight is $3^2+3^2+3^2=27$. This equal distribution minimizes the weight of 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:11:28.198Z  
+**Submitted:** 2026-09-28T14:13:14.196Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -77,6 +77,8 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	//each time i shoudl decrese the highest freq
+	//keep a priority queue... decrese the highest elm
 
 }
 
