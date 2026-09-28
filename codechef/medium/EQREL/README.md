@@ -79,12 +79,12 @@ Therefore, no energy is required.
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T13:41:19.886Z  
+**Submitted:** 2026-09-28T13:41:52.661Z  
 
-```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
