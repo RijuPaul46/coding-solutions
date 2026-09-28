@@ -3,5 +3,7 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	//each time i shoudl decrese the highest freq
+	//keep a priority queue... decrese the highest elm
 
 }
