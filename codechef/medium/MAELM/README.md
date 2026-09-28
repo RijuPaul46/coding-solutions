@@ -86,7 +86,7 @@ Therefore, all elements of $B$ cannot be matched, and the answer is `FALSE`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T13:48:12.329Z  
+**Submitted:** 2026-09-28T13:51:48.332Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -94,6 +94,32 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int n,m;
+	cin>>n>>m;
+	vector<vector<int>>a(n,vector<int>(n)),b(m,vector<int>(m));
+	unordered_map<int,int>mp;
+	for(int i=0;i<n;i++){
+	    for(auto &x:a[i])mp[x]++;
+	}
+	for(int i=0;i<m;i++){
+	    for(auto &x:b[i]){
+	        if(mp.count(x)){
+	            mp[x]--;
+	        }
+	        else{
+	            cout<<"FALSE"<<endl;
+	            return 0;
+	        }
+	    }
+	}
+	for(auto &[u,v]:mp){
+	    if(v<0){
+	        cout<<"FALSE"<<endl;
+	            return 0;
+	    }
+	}
+	cout<<"TRUE"<<endl;
+	return 0;
 
 }
 
