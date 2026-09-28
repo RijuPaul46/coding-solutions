@@ -9,7 +9,7 @@ int main() {
 	int k;
 	cin>>s>>k;
 	int n=s.size();
-	if(n==0 || k>=n){
+	if(n==0 || k=>n){
 	    cout<<"0"<<endl;
 	    return 0;
 	}
