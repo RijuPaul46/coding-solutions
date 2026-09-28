@@ -69,7 +69,7 @@ The weight is $3^2+3^2+3^2=27$. This equal distribution minimizes the weight of 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:24:43.681Z  
+**Submitted:** 2026-09-28T14:21:42.635Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -97,7 +97,6 @@ int main() {
 	    if(q.size()>0){
 	        int tp=q.top();
 	        q.pop();
-	        if((tp-1)>0)
 	        q.push(tp-1);
 	    }
 	    else{
@@ -108,7 +107,7 @@ int main() {
 	ll cnt=0;
 	while(q.size()){
 	    int tp=q.top();
-	    cnt+=(1ll*tp*tp);
+	    cnt+=(tp*tp);
 	    q.pop();
 	}
 	cout<<cnt<<endl;
