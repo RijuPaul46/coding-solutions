@@ -83,14 +83,35 @@ Therefore, the minimum possible price is $321$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T13:42:43.115Z  
+**Submitted:** 2026-09-28T13:47:13.396Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+void solve(){
+    int n;
+    cin>>n;
+    string str=to_string(n);
+    int len=str.size();
+    int ans=LLONG_MAX;
+    for(int i=0;i<len;i++){
+        string left="",right="";
+        if(i>0)
+        left=str.substr(0,i);
+        if(i+1<len)
+        right=str.substr(i+1);
+        string num=left+right;
+        int x=stoll(num);
+        ans=min(ans,x);
+    }
+    cout<<ans<<endl;
+}
+signed main() {
 	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)solve();
 
 }
 
