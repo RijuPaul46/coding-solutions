@@ -69,7 +69,7 @@ The weight is $3^2+3^2+3^2=27$. This equal distribution minimizes the weight of 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T14:19:02.146Z  
+**Submitted:** 2026-09-28T14:17:45.181Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -94,14 +94,13 @@ int main() {
 	priority_queue<int>q;
 	for(auto &f:freq)q.push(f);
 	while(k--){
-	    if(q.size()>0){
+	    if(q.size()){
 	        int tp=q.top();
 	        q.pop();
 	        q.push(tp-1);
 	    }
 	    else{
 	        cout<<"0"<<endl;
-	        return 0;
 	    }
 	}
 	ll cnt=0;
