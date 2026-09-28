@@ -86,7 +86,7 @@ Therefore, all elements of $B$ cannot be matched, and the answer is `FALSE`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-28T13:48:06.335Z  
+**Submitted:** 2026-09-28T13:49:08.335Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -94,6 +94,9 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int n,m;
+	cin>>n>>m;
+	vector<vector<int>>a(n,vector<int>(n)),b(m,vector<int>(m));
 
 }
 
