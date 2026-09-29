@@ -6,9 +6,11 @@ public:
         int n=grid[0].size();
         int mask=score+200;
         int nscore=score+(grid[r][c]=='('?1:-1);
+        
         if(r==m-1 && c==n-1){
             return nscore==0;
         }
+        if(nscore<0)return false;
         auto &ref=dp[r][c][mask];
         if(ref!=-1)return ref;
         bool right=false;
@@ -19,6 +21,7 @@ public:
         return ref=down;
     }
     bool hasValidPath(vector<vector<char>>& grid) {
+        if(grid[0][0]==')')return false;
         memset(dp,-1,sizeof(dp));
         return solve(grid,0,0,0);
     }
