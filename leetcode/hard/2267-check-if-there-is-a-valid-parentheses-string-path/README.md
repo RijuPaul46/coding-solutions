@@ -54,9 +54,9 @@ Explanation: The two possible paths form the parentheses strings "))(" and ")(("
 ## Solution
 
 **Language:** C++  
-**Runtime:** 4 ms  
-**Memory:** 26.4 MB  
-**Submitted:** 2026-09-29T08:12:51.234Z  
+**Runtime:** 97 ms (beats 70.92%)  
+**Memory:** 34.6 MB (beats 48.61%)  
+**Submitted:** 2026-09-29T08:26:25.746Z  
 
 ```cpp
 class Solution {
@@ -67,9 +67,11 @@ public:
         int n=grid[0].size();
         int mask=score+200;
         int nscore=score+(grid[r][c]=='('?1:-1);
+        
         if(r==m-1 && c==n-1){
             return nscore==0;
         }
+        if(nscore<0)return false;
         auto &ref=dp[r][c][mask];
         if(ref!=-1)return ref;
         bool right=false;
@@ -80,6 +82,7 @@ public:
         return ref=down;
     }
     bool hasValidPath(vector<vector<char>>& grid) {
+        if(grid[0][0]==')')return false;
         memset(dp,-1,sizeof(dp));
         return solve(grid,0,0,0);
     }
