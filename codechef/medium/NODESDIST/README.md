@@ -42,12 +42,12 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:05:50.493Z  
+**Submitted:** 2026-10-05T14:19:20.850Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
+int lca(int par,int node, vector<unordered_set<int>>&adj,int src,int dst){
     if(node==src || node==dst){
         return node;
     }
@@ -68,32 +68,43 @@ int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
     if(pos==1)return a;
     return -1;
 }
-int dist(int par,int node, vector<vector<int>>&adj,int dst){
+int dist(int par,int node, vector<unordered_set<int>>&adj,int dst){
     if(node==dst)return 0;
-    vector<int>f(2,-1);
+    int child=adj[node].size();
+    vector<int>f(child-1,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
             f[j++]=dist(node,ch,adj,dst);
         }
     }
-    int left=f[0];
-    int right=f[1];
-    if(left==-1 && right==-1)return -1;
-    return 1+(left==-1?right :left);
+    int sm=0;
+    vector<int>arr;
+    for(int i=0;i<child-1;i++){
+        if(f[i]!=-1)arr.push_back(f[i]);
+    }
+    if(arr.size()==2){
+        return arr[0]+arr[1];
+    }
+    if(arr.size()==1){
+        return 1+arr[0];
+    }
+    return -1;
 }
 int main() {
 	// your code goes here
 	int n,src,dst;
 	cin>>n>>src>>dst;
-	vector<vector<int>>adj(n+1);
+	vector<unordered_set<int>>adj(n+1);
 	for(int i=0;i<n-1;i++){
 	    int u,v;
 	    cin>>u>>v;
-	    adj[u].push_back(v);
-	    adj[v].push_back(u);
+	    adj[u].insert(v);
+	    adj[v].insert(u);
 	}
+	adj[1].insert(0);
 	int lc=lca(0,1,adj,src,dst);
+// 	cout<<"lca= "<<lc<<endl;
 	int lc_u=dist(0,lc,adj,src);
 	int lc_v=dist(0,lc,adj,dst);
 	cout<<lc_u+lc_v<<endl;
