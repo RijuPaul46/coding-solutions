@@ -87,12 +87,12 @@ $6+8+9=23$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:51:52.507Z  
+**Submitted:** 2026-10-05T14:52:52.296Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-int dp[1000][1000];
+int dp[1001][1001];
 int solve(int idx,int cap,vector<int>&b,vector<int>&c){
     if(cap==0)return 0;
     int n=b.size();
