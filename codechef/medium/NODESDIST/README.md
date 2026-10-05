@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:19:20.850Z  
+**Submitted:** 2026-10-05T14:23:46.792Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -81,14 +81,9 @@ int dist(int par,int node, vector<unordered_set<int>>&adj,int dst){
     int sm=0;
     vector<int>arr;
     for(int i=0;i<child-1;i++){
-        if(f[i]!=-1)arr.push_back(f[i]);
+        if(f[i]!=-1)return 1+f[i];
     }
-    if(arr.size()==2){
-        return arr[0]+arr[1];
-    }
-    if(arr.size()==1){
-        return 1+arr[0];
-    }
+    
     return -1;
 }
 int main() {
