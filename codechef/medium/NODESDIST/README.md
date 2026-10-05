@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:05:26.315Z  
+**Submitted:** 2026-10-05T13:58:38.487Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -51,22 +51,18 @@ int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
     if(node==src || node==dst){
         return node;
     }
-    int child=adj[node].size();
-    vector<int>f(child,-1);
+    vector<int>f(2,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
             f[j++]=lca(node,ch,adj,src,dst);
         }
     }
-    int pos=0;
-    int a=-1;
-    for(int i=0;i<child-1;i++){
-        if(f[i]!=-1){a=f[i];pos++;}
-    }
-    if(pos>=2)return node;
-    if(pos==1)return a;
-    return -1;
+    int left=f[0];
+    int right=f[1];
+    if(left==-1 && right==-1)return -1;
+    if(left!=-1 && right!=-1)return node;
+    return left!=-1?left:right;
 }
 int dist(int par,int node, vector<vector<int>>&adj,int dst){
     if(node==dst)return 0;
