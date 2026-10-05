@@ -3,5 +3,13 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int n,src,dst;
+	cin>>n>>src>>dst;
+	vector<int>par(n+1,0);
+	for(int i=0;i<n-1;i++){
+	    int u,v;
+	    cin>>u>>v;
+	    
+	}
 
 }
