@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:23:46.792Z  
+**Submitted:** 2026-10-05T14:25:16.481Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -71,7 +71,7 @@ int lca(int par,int node, vector<unordered_set<int>>&adj,int src,int dst){
 int dist(int par,int node, vector<unordered_set<int>>&adj,int dst){
     if(node==dst)return 0;
     int child=adj[node].size();
-    vector<int>f(child-1,-1);
+    vector<int>f(child,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
