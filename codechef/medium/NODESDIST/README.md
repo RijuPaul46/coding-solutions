@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:57:58.488Z  
+**Submitted:** 2026-10-05T13:59:02.491Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -76,7 +76,7 @@ int dist(int par,int node, vector<vector<int>>&adj,int dst){
     int left=f[0];
     int right=f[1];
     if(left==-1 && right==-1)return -1;
-    return left==-1?right :left;
+    return 1+(left==-1?right :left);
 }
 int main() {
 	// your code goes here
