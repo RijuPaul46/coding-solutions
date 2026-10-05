@@ -87,14 +87,34 @@ $6+8+9=23$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:32:25.306Z  
+**Submitted:** 2026-10-05T14:42:48.303Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+int solve(int idx,int cap,vector<int>&b,vector<int>&c){
+    if(cap==0)return 0;
+    int n=b.size();
+    if(idx==n || cap<0)return INT_MAX;
+    int take=c[idx]+solve(idx,cap-b[idx],b,c);
+    int skip=solve(idx+1,cap,b,c);
+    return min(take,skip);
+}
 int main() {
 	// your code goes here
+	int n,m;
+	cin>>n>>m;
+	vector<int>a(n),b(m),c(m);
+	for(int i=0;i<n;i++)cin>>a[i];
+	for(int i=0;i<m;i++)cin>>b[i];
+	for(int i=0;i<m;i++)cin>>c[i];
+	int sm=0;
+	for(int i=0;i<n;i++){
+	    int am=solve(0,a[i],b,c);
+	    cout<<am<<endl;
+	    sm+=am;
+	}
+	cout<<sm<<endl;
 
 }
 
