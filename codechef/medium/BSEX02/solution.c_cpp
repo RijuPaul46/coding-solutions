@@ -1,30 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
-bool check(int x,int n){
-    int a=(x*(x+1))/2;
-    return a<=n;
-}
-void solve(){
-    int n;
-    cin>>n;
-    int l=1,h=1e9;
-    int ans=1;
-    while(l<=h){
-        int mid=l+(h-l)/2;
-        if(check(mid,n)){
-            ans=mid;
-            l=mid+1;
-        }
-        else h=mid-1;
-        
-    }
-    cout<<ans<<endl;
-}
-signed main() {
+
+int main() {
     // Write your code here
-    int t;
-    cin>>t;
-    while(t--)solve();
     return 0;
 }
