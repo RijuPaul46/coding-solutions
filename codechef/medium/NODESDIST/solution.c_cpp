@@ -29,7 +29,7 @@ int dist(int par,int node, vector<vector<int>>&adj,int dst){
     int left=f[0];
     int right=f[1];
     if(left==-1 && right==-1)return -1;
-    return left==-1?right :left;
+    return 1+(left==-1?right :left);
 }
 int main() {
 	// your code goes here
