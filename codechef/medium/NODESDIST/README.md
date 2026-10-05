@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:03:09.486Z  
+**Submitted:** 2026-10-05T14:05:50.493Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -52,7 +52,7 @@ int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
         return node;
     }
     int child=adj[node].size();
-    vector<int>f(child-1,-1);
+    vector<int>f(child,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
