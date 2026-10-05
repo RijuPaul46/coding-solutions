@@ -87,13 +87,12 @@ $6+8+9=23$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:53:59.321Z  
+**Submitted:** 2026-10-05T14:51:52.507Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-#define int long long
-int dp[1001][1001];
+int dp[1000][1000];
 int solve(int idx,int cap,vector<int>&b,vector<int>&c){
     if(cap==0)return 0;
     int n=b.size();
@@ -105,7 +104,7 @@ int solve(int idx,int cap,vector<int>&b,vector<int>&c){
     int skip=solve(idx+1,cap,b,c);
     return ref=min(take,skip);
 }
-signed main() {
+int main() {
 	// your code goes here
 	int n,m;
 	cin>>n>>m;
