@@ -42,21 +42,24 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:41:59.488Z  
+**Submitted:** 2026-10-05T13:46:21.506Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
+int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
+    
+}
 int main() {
 	// your code goes here
 	int n,src,dst;
 	cin>>n>>src>>dst;
-	vector<int>par(n+1,0);
+	vector<vector<int>>par(n+1);
 	for(int i=0;i<n-1;i++){
 	    int u,v;
 	    cin>>u>>v;
-	    
+	    adj[u].push_back(v);
+	    adj[v].push_back(u);
 	}
 
 }
