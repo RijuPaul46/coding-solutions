@@ -87,22 +87,18 @@ $6+8+9=23$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:46:48.615Z  
+**Submitted:** 2026-10-05T14:40:58.295Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-int dp[1000][1000];
 int solve(int idx,int cap,vector<int>&b,vector<int>&c){
     if(cap==0)return 0;
     int n=b.size();
     if(idx==n || cap<0)return INT_MAX;
-    auto &ref=dp[idx][cap];
-    if(ref!=-1)return ref;
-    int take=solve(idx,cap-b[idx],b,c);
-    if(take!=INT_MAX)take+=c[idx];
+    int take=c[idx]+solve(idx,cap-b[idx],b,c);
     int skip=solve(idx+1,cap,b,c);
-    return ref=min(take,skip);
+    return min(take,skip);
 }
 int main() {
 	// your code goes here
@@ -113,12 +109,8 @@ int main() {
 	for(int i=0;i<m;i++)cin>>b[i];
 	for(int i=0;i<m;i++)cin>>c[i];
 	int sm=0;
-	
 	for(int i=0;i<n;i++){
-	    memset(dp,-1,sizeof(dp));
-	    int am=solve(0,a[i],b,c);
-	    sm+=am;
-	   // cout<<am<<" sum="<<sm<<endl;
+	    sm+=solve(0,a[i],b,c);
 	}
 	cout<<sm<<endl;
 
