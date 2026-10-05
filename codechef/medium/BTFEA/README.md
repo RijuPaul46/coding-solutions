@@ -87,7 +87,7 @@ $6+8+9=23$
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T14:42:48.303Z  
+**Submitted:** 2026-10-05T14:43:41.296Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -111,7 +111,7 @@ int main() {
 	int sm=0;
 	for(int i=0;i<n;i++){
 	    int am=solve(0,a[i],b,c);
-	    cout<<am<<endl;
+	    cout<<am<<" sum="<<sm<<endl;
 	    sm+=am;
 	}
 	cout<<sm<<endl;
