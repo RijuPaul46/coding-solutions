@@ -42,52 +42,58 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:58:38.487Z  
+**Submitted:** 2026-10-05T14:09:02.511Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-int lca(int par,int node, vector<vector<int>>&adj,int src,int dst){
+int lca(int par,int node, vector<unordered_set<int>>&adj,int src,int dst){
     if(node==src || node==dst){
         return node;
     }
-    vector<int>f(2,-1);
+    int child=adj[node].size();
+    vector<int>f(child,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
             f[j++]=lca(node,ch,adj,src,dst);
         }
     }
-    int left=f[0];
-    int right=f[1];
-    if(left==-1 && right==-1)return -1;
-    if(left!=-1 && right!=-1)return node;
-    return left!=-1?left:right;
+    int pos=0;
+    int a=-1;
+    for(int i=0;i<child-1;i++){
+        if(f[i]!=-1){a=f[i];pos++;}
+    }
+    if(pos>=2)return node;
+    if(pos==1)return a;
+    return -1;
 }
-int dist(int par,int node, vector<vector<int>>&adj,int dst){
+int dist(int par,int node, vector<unordered_set<int>>&adj,int dst){
     if(node==dst)return 0;
-    vector<int>f(2,-1);
+    int child=adj[node].size();
+    vector<int>f(child,-1);
     int j=0;
     for(auto &ch:adj[node]){
         if(ch!=par){
             f[j++]=dist(node,ch,adj,dst);
         }
     }
-    int left=f[0];
-    int right=f[1];
-    if(left==-1 && right==-1)return -1;
-    return 1+(left==-1?right :left);
+    int sm=0;
+    for(int i=0;i<child-1;i++){
+        if(f[i]!=-1)sm+=f[i];
+    }
+    return sm==0?-1:1+sm;
 }
 int main() {
 	// your code goes here
 	int n,src,dst;
 	cin>>n>>src>>dst;
-	vector<vector<int>>adj(n+1);
+	vector<unordered_set<int>>adj(n+1);
 	for(int i=0;i<n-1;i++){
 	    int u,v;
 	    cin>>u>>v;
-	    adj[u].push_back(v);
-	    adj[v].push_back(u);
+	    adj[u].insert(v);
+	    adj[v].insert(u);
 	}
 	int lc=lca(0,1,adj,src,dst);
 	int lc_u=dist(0,lc,adj,src);
