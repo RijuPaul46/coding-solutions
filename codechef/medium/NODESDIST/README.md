@@ -42,7 +42,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:39:03.488Z  
+**Submitted:** 2026-10-05T13:41:59.488Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -50,6 +50,14 @@ using namespace std;
 
 int main() {
 	// your code goes here
+	int n,src,dst;
+	cin>>n>>src>>dst;
+	vector<int>par(n+1,0);
+	for(int i=0;i<n-1;i++){
+	    int u,v;
+	    cin>>u>>v;
+	    
+	}
 
 }
 
