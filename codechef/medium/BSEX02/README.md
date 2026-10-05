@@ -48,14 +48,37 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-05T13:35:20.781Z  
+**Submitted:** 2026-10-05T13:38:07.228Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+bool check(int x,int n){
+    int a=(x*(x+1))/2;
+    return a<=n;
+}
+void solve(){
+    int n;
+    cin>>n;
+    int l=1,h=1e9;
+    int ans=1;
+    while(l<=h){
+        int mid=l+(h-l)/2;
+        if(check(mid,n)){
+            ans=mid;
+            l=mid+1;
+        }
+        else h=mid-1;
+        
+    }
+    cout<<ans<<endl;
+}
+signed main() {
     // Write your code here
+    int t;
+    cin>>t;
+    while(t--)solve();
     return 0;
 }
 ```
