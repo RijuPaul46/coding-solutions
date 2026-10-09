@@ -56,9 +56,9 @@ Explanation: Add '(' to match the first '))', Add '))' to match the last '('.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.8 MB  
-**Submitted:** 2026-10-09T20:39:38.642Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 15.5 MB (beats 92.13%)  
+**Submitted:** 2026-10-09T21:44:57.253Z  
 
 ```cpp
 #define db double
@@ -76,6 +76,10 @@ public:
                     need+=add;
                     score=0;
                 }
+                if((score-floor(score))==0.5){
+                    need+=1;
+                    score=floor(score);
+                }
                 score+=1.0;
             }
             else{
@@ -83,7 +87,7 @@ public:
             }
         }
         if(score<0)
-        need+=floor(abs(score))+2*(abs(score)-floor(abs(score)));
+        need+=floor(abs(score))+2*((abs(score)-floor(abs(score))>0));
         else need+=2*score;
         return (int)need;
     }
