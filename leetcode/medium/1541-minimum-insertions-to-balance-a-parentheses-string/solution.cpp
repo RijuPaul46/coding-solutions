@@ -13,6 +13,10 @@ public:
                     need+=add;
                     score=0;
                 }
+                if((score-floor(score))==0.5){
+                    need+=1;
+                    score=floor(score);
+                }
                 score+=1.0;
             }
             else{
@@ -20,7 +24,7 @@ public:
             }
         }
         if(score<0)
-        need+=floor(abs(score))+2*(abs(score)-floor(abs(score)));
+        need+=floor(abs(score))+2*((abs(score)-floor(abs(score))>0));
         else need+=2*score;
         return (int)need;
     }
