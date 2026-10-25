@@ -52,9 +52,9 @@ Explanation: You have to take all the cards. Your score is the sum of points of 
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.3 MB  
-**Submitted:** 2026-10-25T17:46:58.251Z  
+**Runtime:** 3 ms (beats 14.74%)  
+**Memory:** 48.6 MB (beats 5.62%)  
+**Submitted:** 2026-10-25T17:47:09.308Z  
 
 ```cpp
 class Solution {
