@@ -57,21 +57,12 @@ For the third account number, the digit sum is $10$, which is divisible by $10$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T13:39:38.134Z  
+**Submitted:** 2026-10-26T13:36:22.132Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-int digitsum(int n){
-    int sm=0;
-    while(n>0){
-        int d=n%10;
-        sm+=d;
-        n/=10;
-    }
-    return sm;
-}
 signed main() {
 	// your code goes here
 	int t;
@@ -79,9 +70,11 @@ signed main() {
 	while(t--){
 	    int a;
 	    cin>>a;
-	    
-	    int sm=digitsum(a);
-	    
+	    string str=to_string(a);
+	    int sm=0;
+	    for(auto &c:str){
+	        sm+=(c-'0');
+	    }
 	    if((sm%10) ==0){
 	        cout<<"Valid"<<endl;
 	    }
