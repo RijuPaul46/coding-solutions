@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int a;
+	    cin>>a;
+	    string str=to_string(a);
+	    int sm=0;
+	    for(auto &c:str){
+	        sm+=(c-'0');
+	    }
+	    if(sm%10 ==0){
+	        cout<<"Valid"<<endl;
+	    }
+	    else cout<<"Invalid"<<endl;
+	}
+
+}
