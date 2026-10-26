@@ -57,13 +57,13 @@ For the third account number, the digit sum is $10$, which is divisible by $10$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T13:34:12.127Z  
+**Submitted:** 2026-10-26T13:35:25.134Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-
-int main() {
+#define int long long
+signed main() {
 	// your code goes here
 	int t;
 	cin>>t;
@@ -75,7 +75,7 @@ int main() {
 	    for(auto &c:str){
 	        sm+=(c-'0');
 	    }
-	    if(sm%10 ==0){
+	    if((sm%10) ==0){
 	        cout<<"Valid"<<endl;
 	    }
 	    else cout<<"Invalid"<<endl;
