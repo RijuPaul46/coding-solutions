@@ -70,12 +70,12 @@ Therefore, the decoded message is `beunstoppable`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T14:16:09.103Z  
+**Submitted:** 2026-10-26T13:58:11.869Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
-char mirror(char c){
+char reverse(char c){
     if(c>='a' && c<='n'){
         int idx=c-'a';
         int ridx=13-idx;
@@ -93,9 +93,11 @@ int main() {
 	int n=s.size();
 	for(int i=0;i<n;i++){
 	    char c=s[i];
-	    if(c=='#')continue;
-	    t+=mirror(c);
-	    
+	    t+=reverse(c);
+	    if(c>='a' && c<='n'){
+	        
+	    }
+	    else i++;
 	}
 	cout<<t<<endl;
 
