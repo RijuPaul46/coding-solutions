@@ -12,6 +12,8 @@ int digitsum(int n){
 }
 signed main() {
 	// your code goes here
+	 ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 	int t;
 	cin>>t;
 	while(t--){
