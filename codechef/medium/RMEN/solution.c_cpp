@@ -19,10 +19,10 @@ int main() {
 	for(int i=0;i<n;i++){
 	    char c=s[i];
 	    t+=reverse(c);
-	    if(c>='a' && c<='n'){
-	        
+	    if(c>='o' && c<='z'){
+	        i++;
 	    }
-	    else i++;
+	    
 	}
 	cout<<t<<endl;
 
