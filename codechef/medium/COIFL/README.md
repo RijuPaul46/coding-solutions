@@ -63,13 +63,14 @@ To achieve a sum of 2, there are two ways:
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T13:47:46.209Z  
+**Submitted:** 2026-10-26T13:50:06.069Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 int dp[25];
 int solve(int n){
+    if(n==0)return 0;
     if(n==1)return 1;
     if(n==2)return 2;
     if(dp[n]!=-1)return dp[n];
@@ -82,7 +83,8 @@ int main() {
 	int s;
 	cin>>s;
 	memset(dp,-1,sizeof(dp));
-	return solve(s);
+	cout<< solve(s)<<endl;
+	return 0;
 
 }
 
