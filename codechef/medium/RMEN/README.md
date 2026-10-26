@@ -70,7 +70,7 @@ Therefore, the decoded message is `beunstoppable`.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T14:06:06.775Z  
+**Submitted:** 2026-10-26T14:10:27.196Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -94,10 +94,10 @@ int main() {
 	for(int i=0;i<n;i++){
 	    char c=s[i];
 	    t+=reverse(c);
-	    if(c>='a' && c<='n'){
-	        
+	    if(c>='o' && c<='z'){
+	        i++;
 	    }
-	    else i++;
+	    
 	}
 	cout<<t<<endl;
 
