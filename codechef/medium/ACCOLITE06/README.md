@@ -48,17 +48,39 @@ NO
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-26T14:00:55.237Z  
+**Submitted:** 2026-10-26T14:05:32.750Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
+int dp[100][10001];
+bool find(vector<int>&arr,int sm,int i){
+    if(sm==0)return 1;
+    if(sm<0)return 0;
+    int n=arr.size();
+    if(i==n)return 0;
+    if(dp[i][sm]!=-1)return dp[i][sm];
+    int take=find(arr,sm-arr[i],i+1);
+    int skip=find(arr,sm,i+1);
+    return dp[i][sm]=(take|| skip);
+}
 void solve(){
     int n;
     cin>>n;
     vector<int>arr(n);
     for(int i=0;i<n;i++)cin>>arr[i];
-    
+    int sm=0;
+    for(int i=0;i<n;i++)sm+=arr[i];
+    if(sm%2 ==1){
+        cout<<"NO"<<endl;
+        return;
+    }
+    memset(dp,-1,sizeof(dp));
+    bool ans=find(arr,sm/2,0);
+    if(ans){
+        cout<<"YES"<<endl;
+    }
+    else cout<<"NO"<<endl;
 }
 int main() {
 	// your code goes here
