@@ -1,15 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-int digitsum(int n){
-    int sm=0;
-    while(n>0){
-        int d=n%10;
-        sm+=d;
-        n/=10;
-    }
-    return sm;
-}
 signed main() {
 	// your code goes here
 	int t;
@@ -17,9 +8,11 @@ signed main() {
 	while(t--){
 	    int a;
 	    cin>>a;
-	    
-	    int sm=digitsum(a);
-	    
+	    string str=to_string(a);
+	    int sm=0;
+	    for(auto &c:str){
+	        sm+=(c-'0');
+	    }
 	    if((sm%10) ==0){
 	        cout<<"Valid"<<endl;
 	    }
