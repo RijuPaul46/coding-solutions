@@ -77,9 +77,9 @@ Number	Full Path
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 9 MB  
-**Submitted:** 2026-10-31T21:30:21.568Z  
+**Runtime:** 1778 ms (beats 5.11%)  
+**Memory:** 451.8 MB (beats 32.12%)  
+**Submitted:** 2026-10-31T21:30:31.181Z  
 
 ```cpp
 class Solution {
