@@ -62,9 +62,9 @@ Since no items are required (`need1 = need2 = 0`), we buy nothing and pay 0.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.6 MB  
-**Submitted:** 2026-11-11T09:12:33.300Z  
+**Runtime:** 1 ms (beats 21.76%)  
+**Memory:** 9.3 MB (beats 52.35%)  
+**Submitted:** 2026-11-11T09:12:57.110Z  
 
 ```cpp
 class Solution {
@@ -97,7 +97,7 @@ public:
             total+=1ll*(need1)*min(cost1,costBoth);
         }
         else if(need2>0){
-            total+=(need2)*min(cost2,costBoth);
+            total+=1ll*(need2)*min(cost2,costBoth);
         }
         // c1<=cb<=c2
 
